@@ -7,12 +7,12 @@ function validEmail($email)
 }
 ;
 
-
 if (!empty($email)) {
     if (!validEmail($email)) {
         echo '<div class="alert alert-danger text-center" role="alert">Invalid email.Try again </div>';
     } else {
-        echo '<div class="alert alert-success text-center" role="alert"> ' . 'You are in! Congratulations!' . '</div>';
+        header("Location: helpers/userthankyou.php");
+        exit;
     }
 }
 ?>
