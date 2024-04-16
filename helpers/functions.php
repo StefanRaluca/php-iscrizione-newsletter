@@ -15,4 +15,7 @@ if (!empty($email)) {
         exit;
     }
 }
+$emailUser = isset($_GET['email']) ? ($_GET['email']) : '';
+
+
 ?>

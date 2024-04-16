@@ -8,32 +8,9 @@ include_once __DIR__ . '/layout/head.php';
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-            <div class="container">
-                <a class="navbar-brand" href="/">Newsletter</a>
-                <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="collapsibleNavId">
-                    <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link active" href="/" aria-current="page">Home
-                                <span class="visually-hidden">(current)</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/">About</a>
-                        </li>
-
-                    </ul>
-
-                </div>
-            </div>
-        </nav>
-
-
-
+        <?php
+        include_once __DIR__ . '/layout/navbar.php';
+        ?>
     </header>
     <main>
         <div class="p-5 mb-4 bg-light rounded-3">
@@ -150,8 +127,7 @@ include_once __DIR__ . '/layout/head.php';
                     <div class="mb-3 text-center">
                         <label for="" class="form-label fs-4 text">Email :</label>
                         <input type="text" class="form-control" name="email" id="email" aria-describedby="helpId"
-                            placeholder="Type your email" />
-
+                            value="<?php echo $emailUser; ?>" placeholder="Type your email" />
                     </div>
                     <button type="submit" class="btn btn-primary"
                         style="margin-left: 55px; margin-bottom: 20px;">Subscribe</button>
@@ -161,37 +137,9 @@ include_once __DIR__ . '/layout/head.php';
         </section>
     </main>
     <footer class="text-white py-4 bg-dark text-center">
-        <div class="container">
-            <div class="row">
-                <div class="col">
-                    <h3>Company</h3>
-                    <ul class="list-unstyled">
-                        <li><a href="">Lorem.</a></li>
-                        <li><a href="">Corporis.</a></li>
-                        <li><a href="">Optio!</a></li>
-                        <li><a href="">Perferendis?</a></li>
-                    </ul>
-                </div>
-                <div class="col">
-                    <h3>Quick links</h3>
-                    <ul class="list-unstyled">
-                        <li><a href="">Lorem.</a></li>
-                        <li><a href="">Corporis.</a></li>
-                        <li><a href="">Optio!</a></li>
-                        <li><a href="">Perferendis?</a></li>
-                    </ul>
-                </div>
-                <div class="col">
-                    <h3>Legal</h3>
-                    <ul class="list-unstyled">
-                        <li><a href="">Lorem.</a></li>
-                        <li><a href="">Corporis.</a></li>
-                        <li><a href="">Optio!</a></li>
-                        <li><a href="">Perferendis?</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+        <?php
+        include_once __DIR__ . '/layout/footer.php';
+        ?>
     </footer>
 </body>
 
