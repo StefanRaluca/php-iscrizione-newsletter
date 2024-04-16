@@ -1,15 +1,19 @@
 <?php
-$email = $_GET['email'];
+$email = isset($_GET['email']) ? $_GET['email'] : '';
 
-if (isset($_GET['email']) && strpos($_GET['email'], '@') !== false && strpos($_GET['email'], '.') !== false) {
-    $email = $_GET['email'];
-    var_dump($email);
-   
-} else{
-    echo 'Type a correct email'    ;
+function validEmail($email) {
+    return (isset($email) && strpos($email, '@') !== false && strpos($email, '.') !== false);
+}
+
+if (!empty($email)) {
+    if (!validEmail($email)) {
+        echo '<div class="alert alert-danger text-center" role="alert">Invalid email.Try again </div>';
+    } else {
+        echo '<div class="alert alert-success text-center" role="alert"> ' . 'You are in! Congratulations!' . '</div>';
     }
-
+}
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -180,8 +184,7 @@ if (isset($_GET['email']) && strpos($_GET['email'], '@') !== false && strpos($_G
                 />
           
             </div>
-            <button type="submit" class="btn btn-primary" style="    margin-left: 55px;
-    margin-bottom: 20px;">Subscribe</button>
+            <button type="submit" class="btn btn-primary" style="margin-left: 55px; margin-bottom: 20px;">Subscribe</button>
         </form>
     </div>
 
